@@ -23,13 +23,13 @@ class FormValidator {
       `#${inputElement.id}-error`
     );
     inputElement.classList.remove(this._inputErrorClass);
-    errorElement.textContent = errorMessage;
+    errorElement.textContent = "";
     errorElement.classList.remove(this._errorClass);
   }
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(inputElement, inputElement.validationMessage);
+      this._showInputError(inputElement.validationMessage, inputElement);
     } else {
       this._hideInputError(inputElement);
     }
@@ -67,7 +67,7 @@ class FormValidator {
       this._submitButtonSelector
     );
 
-    this._toggleButtonState(this._inputList);
+    this._toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
