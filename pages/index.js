@@ -54,7 +54,7 @@ addTodoForm.addEventListener("submit", (evt) => {
 });
 
 initialTodos.forEach((item) => {
-  renderTodo(item);
+  
 });
 
 const todoValidator = new FormValidator(validationConfig, addTodoForm);
