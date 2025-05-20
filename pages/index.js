@@ -24,6 +24,10 @@ const generateTodo = (data) => {
   const todoElement = todo.getView();
   return todoElement;
 };
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  todosList.append(todo);
+};
 
 addTodoButton.addEventListener("click", () => {
   openModal(addTodoPopup);
