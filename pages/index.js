@@ -22,7 +22,7 @@ const addTodoPopup = new PopupWithForm({
 
     const date = new Date(dateInput);
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-
+    todoCounter.updateTotal(true);
     const id = uuidv4();
     const values = { name, date, id };
     section.addItem(values);
@@ -36,9 +36,10 @@ function handleCheck(completed) {
 }
 
 function handleDelete(completed) {
+  todoCounter.updateTotal(false);
   if (completed) {
     todoCounter.updateCompleted(false);
-    todoCounter.updateTotal(false);
+    // todoCounter.updateTotal(false);
   }
 }
 
