@@ -9,8 +9,6 @@ import PopupWithForm from "../components/PopupWithForm.js";
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopupEl = document.querySelector("#add-todo-popup");
 const addTodoForm = document.forms["add-todo-form"];
-//const addTodoCloseBtn = addTodoPopupEl.querySelector(".popup__close");
-const todosList = document.querySelector(".todos__list");
 
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
@@ -39,7 +37,6 @@ function handleDelete(completed) {
   todoCounter.updateTotal(false);
   if (completed) {
     todoCounter.updateCompleted(false);
-    // todoCounter.updateTotal(false);
   }
 }
 
@@ -58,10 +55,6 @@ const section = new Section({
 });
 
 section.renderItems();
-
-//const closeModal = (modal) => {
-// modal.classList.remove("popup_visible");
-//};
 
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
